@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.amzon.tests.SignInPageTest">
+      <class name="com.amzon.tests.RegistrationPageTest">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="signInwithValidCredentialsTest"/>
-          <include name="baseSetUp"/>
           <include name="setUpPage"/>
+          <include name="isLogoPresentTest"/>
+          <include name="closeBrowser"/>
+          <include name="baseSetUp"/>
         </methods>
-      </class> <!-- com.amzon.tests.SignInPageTest -->
+      </class> <!-- com.amzon.tests.RegistrationPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

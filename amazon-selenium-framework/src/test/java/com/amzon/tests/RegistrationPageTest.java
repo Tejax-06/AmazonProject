@@ -17,6 +17,7 @@ public class RegistrationPageTest extends BaseTest{
 	}
 	@Test
 	public void isLogoPresentTest() {
+		homepage.openSignInpage();
 		Assert.assertTrue(registrationPage.verifyLogo(),"Error ---Logo IS nOt Present");
 	}
 	

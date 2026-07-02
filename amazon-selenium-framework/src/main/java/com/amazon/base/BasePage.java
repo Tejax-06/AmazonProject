@@ -18,7 +18,7 @@ public class BasePage {
 
 	protected WebDriver driver;
 	protected CustomWait wait;
-	@FindBy(xpath="//a[@id=\"nav-logo-sprites\"]")
+	@FindBy(xpath="//a[@href=\"/ref=ap_frn_logo\"]")
 	private WebElement logo;
 	protected ConfigReader configReader;
 	
@@ -54,7 +54,7 @@ public class BasePage {
 	
 	
 	public WebElement getLogo() {
-		wait.waitForInvisibilityOFElemnt(logo);
+		wait.waitForVisibilityOfElement(logo);
 		return logo;
 	}
 	
