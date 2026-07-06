@@ -3,14 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.amzon.tests.RegistrationPageTest">
+      <class name="com.amzon.tests.HomePageTest">
         <methods>
-          <include name="setUpPage"/>
-          <include name="isLogoPresentTest"/>
-          <include name="closeBrowser"/>
           <include name="baseSetUp"/>
+          <include name="verifyAmazonMusicLink"/>
         </methods>
-      </class> <!-- com.amzon.tests.RegistrationPageTest -->
+      </class> <!-- com.amzon.tests.HomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

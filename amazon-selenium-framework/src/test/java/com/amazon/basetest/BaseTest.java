@@ -31,7 +31,7 @@ public class BaseTest {
 		
 	   
 	    driver.get(configReader.getUrl());
-//		driver.manage().window().maximize();
+      	driver.manage().window().maximize();
 		//driver.get("https://www.amazon.in/");
 		
 		registrationPage = new RegistrationPage(driver);
@@ -41,11 +41,11 @@ public class BaseTest {
 		
 	}
 	
-	@AfterMethod (alwaysRun=true)
-	
-	public void closeBrowser() {
-		basepage.quiteDriver();
-	}
+	/*
+	 * @AfterMethod (alwaysRun=true)
+	 * 
+	 * public void closeBrowser() { basepage.quiteDriver(); }
+	 */
 	
 	
 }

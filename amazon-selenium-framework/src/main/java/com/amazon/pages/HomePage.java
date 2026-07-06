@@ -1,6 +1,9 @@
 package com.amazon.pages;
 
 
+
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -27,8 +30,46 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//div[@id=\"nav-flyout-ya-newCust\"]")
 	public WebElement NewCustomeStartHere_lnk;
 	
+	@FindBy(xpath="//input[@id=\"twotabsearchtextbox\"]")
+	 public WebElement SearchBox_textField;
+	
+	@FindBy(xpath="//a[@id=\"nav-logo-sprites\"]")
+	public WebElement amazonlogoHomepage;
+	
+	@FindBy(xpath="//a//h5[text()=\"Amazon Music\"]")
+	public WebElement AmazonMusic_link;
+	
+	
 	//consstructor
 	
+	/**
+	 * Creted By:- Tejas Karale
+	 *Add this to wait till page is get fully loaded thats why verifying logo
+	 * @return 
+	 */
+	
+	public WebElement getAmazonMusic_link() {
+		wait.waitForVisibilityOfElement(AmazonMusic_link);
+		return AmazonMusic_link;
+	}
+	
+	public WebElement getAmazonlogoHomepage() {
+		wait.waitForVisibilityOfElement(amazonlogoHomepage);
+		return amazonlogoHomepage;
+	}
+
+
+	public Actions getAction() {
+		return action;
+	}
+
+
+	public WebElement getSearchBox_textField() {
+		wait.waitForVisibilityOfElement(SearchBox_textField);
+		return SearchBox_textField;
+	}
+
+
 	public HomePage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this);
@@ -65,10 +106,17 @@ public class HomePage extends BasePage{
 		action.moveToElement(getAccountAndLists()).perform();
         SignIn_btn.click();
 	}
+	
+	public void SerachTheItemAndVerifyByText(String searchProduct) {
+		 SearchBox_textField.sendKeys(searchProduct);
+		 SearchBox_textField.sendKeys(Keys.ENTER);
+	}
+	
+	
 
-//	public String getTitleOfThePage() {
-//		// TODO Auto-generated method stub
-//		return "String";
-//        // return driver.getTitle(); ;
-//}
+     public String getTitleOfThePage() {
+		
+	
+       return driver.getTitle(); 
+     }
 }
