@@ -53,5 +53,4 @@ public class HomePageTest extends BaseTest {
 		 		, "Title found");
 		  System.out.println(title2);
 	  }
-
 }
