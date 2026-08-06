@@ -6,12 +6,14 @@
     <test name="Amazon Sign in page test">
         <groups>
             <run>
-                <include name="regression"/>
+                <include name="Sanity"/>
             </run>
         </groups>
-
+<listeners>
+     <listener class-name="com.amazon.customlisteners.MyListeners"></listener>
+ </listeners>
         <classes>
-            <class name="com.amzon.tests.SignInPageTest"/>
+            <class name="com.amzon.tests.HomePageTest"/>
         </classes>
     </test>
 

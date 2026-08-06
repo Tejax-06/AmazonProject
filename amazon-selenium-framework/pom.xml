@@ -7,6 +7,8 @@
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <suiteXmlFile>sanity</suiteXmlFile>
+    <!--mvn clean test -DsuiteXmlFile-->
 </properties>
 
 <dependencies>
@@ -17,17 +19,24 @@
 </dependency>
 
 <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.4.1</version>
+</dependency>
+
+<dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.11.0</version>
     <scope>test</scope>
 </dependency>
 
+	
 </dependencies>
   
   <build>
     <plugins>
-
+   <!-- Compiler Plugin -->
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -37,13 +46,24 @@
             </configuration>
         </plugin>
 
+
+<!-- Surefire Plugin -->
+
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.5.3</version>
-        </plugin>
+        
+    <configuration>
+        <suiteXmlFiles>
+            <suiteXmlFile>testRunner/suiteFile/${suiteXmlFile}.xml</suiteXmlFile>
+        </suiteXmlFiles>
+    </configuration>
+</plugin>
 
     </plugins>
+    
+    
 </build>
   
 </project>

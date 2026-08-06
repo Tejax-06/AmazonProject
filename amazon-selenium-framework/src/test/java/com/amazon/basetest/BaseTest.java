@@ -15,7 +15,7 @@ public class BaseTest {
 
 	
 	public BasePage basepage;
-	public WebDriver driver;
+	public static  WebDriver driver;
 	public RegistrationPage registrationPage;
 	//public SignInPage signInpage;
 	public HomePage homepage;

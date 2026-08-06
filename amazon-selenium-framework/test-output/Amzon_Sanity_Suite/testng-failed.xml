@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Amzon_Sanity_Suite]">
+  <listeners>
+    <listener class-name="com.amazon.customlisteners.MyListeners"/>
+  </listeners>
   <test thread-count="5" name="Amazon Sign in page test(failed)">
     <groups>
       <run>
@@ -8,14 +11,12 @@
       </run>
     </groups>
     <classes>
-      <class name="com.amzon.tests.SignInPageTest">
+      <class name="com.amzon.tests.HomePageTest">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="signInwithValidCredentialsTest"/>
           <include name="baseSetUp"/>
-          <include name="setUpPage"/>
+          <include name="VerifyUserCanSearchItem"/>
         </methods>
-      </class> <!-- com.amzon.tests.SignInPageTest -->
+      </class> <!-- com.amzon.tests.HomePageTest -->
     </classes>
   </test> <!-- Amazon Sign in page test(failed) -->
 </suite> <!-- Failed suite [Amzon_Sanity_Suite] -->
